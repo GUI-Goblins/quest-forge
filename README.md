@@ -38,6 +38,7 @@
 > 1. Create User (<https://github.com/GUI-Goblins/lambda-create-user>)
 > 2. Trigger OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-request>)
 > 3. Send OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-prompt>)
+>
 >   Create env files with following info:
 >       OPEN_AI_URL - {CHAT_COMPLETIONS_OPENAI_URL}
 >       OPENAI_API_KEY - {USE_YOUR_OWN_OPENAI_API_KEY}
@@ -72,3 +73,8 @@
     * Please create an OpenAI account if you do not already have one, and generate a secret key as you will need it in order to access the API!
     * Place the Secret Key into your environment variable as a value with a key of "OPENAI_API_KEY"
 
+## We would like to give thanks to:
+* Jacob
+* ChatGPT
+* Stack Overflow
+* Slidesgo

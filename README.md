@@ -22,23 +22,33 @@
 ## Installation
 
 * Clone down the respective repos located on our organization page (<https://github.com/GUI-Goblins>)
-* Create API Gateway on AWS with the following criteria:
-> 1. POST to an {endpoint}- to create user with following schema:
+* Create a Schema on AWS DynamoDB with the following criteria:
 > ```javascript
 > {
->   "id": NUMBER, // Update id on URL on server.js of simple-backend-api repo
+>   "id": NUMBER,
 > 	"name": STRING,
 >	"race": STRING,
 >	"class": STRING,
 >	"age": NUMBER,
 >}
 > ```
-> 2. POST to an {endpoint/:id} using the id create with the user. Update endpoint on server.js of simple-backend-api repo with endpoint created above.
+* Create API Gateway on AWS with the following criteria:
+> 1. POST to an {endpoint} - to create user.
+> 2. POST to an {endpoint/:id} - use the the id when user is created.
 * Create 4 separate lambda functions below using repos below:
 > 1. Create User (<https://github.com/GUI-Goblins/lambda-create-user>)
+> ```javascript
+> {
+>   "id": NUMBER,
+> 	"name": STRING,
+>	"race": STRING,
+>	"class": STRING,
+>	"age": NUMBER,
+>}
+> ```
 > 2. Trigger OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-request>)
+>> This repo is NOT currently being utilized as simple-backend-api repo will directly trigger API Gateway which will start the application loop.
 > 3. Send OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-prompt>)
->
 >>   Create env files with following info:
 >>>       OPEN_AI_URL - {CHAT_COMPLETIONS_OPENAI_URL}
 >>>       OPENAI_API_KEY - {USE_YOUR_OWN_OPENAI_API_KEY}

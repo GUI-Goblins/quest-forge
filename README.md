@@ -40,8 +40,8 @@
 > 3. Send OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-prompt>)
 >
 >>   Create env files with following info:
->>       OPEN_AI_URL - {CHAT_COMPLETIONS_OPENAI_URL}
->>       OPENAI_API_KEY - {USE_YOUR_OWN_OPENAI_API_KEY}
+>>>       OPEN_AI_URL - {CHAT_COMPLETIONS_OPENAI_URL}
+>>>       OPENAI_API_KEY - {USE_YOUR_OWN_OPENAI_API_KEY}
 > 4. Roll Character End (<https://github.com/GUI-Goblins/lambda-openai-roll>)
 * Export the code located in the respective repos above to AWS Lambda using:
 > 1. GitHub Actions

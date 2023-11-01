@@ -54,9 +54,18 @@
 > Create env file below:
 > SERVER_URL - {URL_TO_BACKEND_SERVER}
 
+## Unified Modeling Language (UML) Diagram
+
+> See UML Diagram below to check the overall architecture of this application
+[Link to UML](https://projects.invisionapp.com/freehand/document/Og97QVUVy)
+![UML Diagram](./quest-forge-uml.png)
+
 ## Dependencies 
 
 * aws-sdk
+* AWS Access and Secret Keys
+* axios
+* dot-env
 * dynamoose
 * dynamoDB
 * environment variables

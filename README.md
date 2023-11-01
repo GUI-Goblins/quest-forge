@@ -1,6 +1,6 @@
 # Quest-forge
 
-[Logo](./QuestForge.png)
+![Logo](./QuestForge.png)
 
 ## Application Description (About)
 
@@ -22,10 +22,37 @@
 ## Installation
 
 * Clone down the respective repos located on our organization page (<https://github.com/GUI-Goblins>)
-* Create API Gateway on AWS
-* Create 3 separate lambda functions named after the repos
-* Export the code located in the respective repos to AWS
-* Check your cloudwatch logs! (for now)
+* Create API Gateway on AWS with the following criteria:
+> 1. POST to an {endpoint}- to create user with following schema:
+> ```javascript
+> {
+>   "id": NUMBER, // Update id on URL on server.js of simple-backend-api repo
+> 	"name": STRING,
+>	"race": STRING,
+>	"class": STRING,
+>	"age": NUMBER,
+>}
+> ```
+> 2. POST to an {endpoint/:id} using the id create with the user. Update endpoint on server.js of simple-backend-api repo with endpoint created above.
+* Create 4 separate lambda functions below using repos below:
+> 1. Create User (<https://github.com/GUI-Goblins/lambda-create-user>)
+> 2. Trigger OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-request>)
+> 3. Send OpenAI Request (<https://github.com/GUI-Goblins/lambda-openai-prompt>)
+>   Create env files with following info:
+>       OPEN_AI_URL - {CHAT_COMPLETIONS_OPENAI_URL}
+>       OPENAI_API_KEY - {USE_YOUR_OWN_OPENAI_API_KEY}
+> 4. Roll Character End (<https://github.com/GUI-Goblins/lambda-openai-roll>)
+* Export the code located in the respective repos above to AWS Lambda using:
+> 1. GitHub Actions
+> 2. Zip code and upload to AWS
+* Create a node server
+> Simple Backend Server (<https://github.com/GUI-Goblins/simple-backend-api>)
+> Update URL to the POST endpoint created on API Gateway:
+> endpoint/:id
+* Create a Vite/React frontend
+> Simple Frontend Application (<https://github.com/GUI-Goblins/simple-frontend-app>)
+> Create env file below:
+> SERVER_URL - {URL_TO_BACKEND_SERVER}
 
 ## Dependencies 
 
